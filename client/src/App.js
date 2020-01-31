@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import "./styles.scss";
-import logo from "./logo.png";
+// import logo from "./logo.png";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Login";
@@ -35,6 +35,3 @@ function App() {
 }
 
 export default App;
-
-
-        
