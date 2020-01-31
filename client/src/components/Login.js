@@ -70,7 +70,7 @@ const Login = props => {
   };
 
   return (
-    <StyledLogin>
+    // <StyledLogin>
     <div className="login-form">
       <form data-testid="login-form" onSubmit={handleSubmit}>
         <input
@@ -90,7 +90,7 @@ const Login = props => {
         <button className='login-button' type="submit">Login</button>
       </form>
     </div>
-    </StyledLogin>
+    // </StyledLogin>
   );
 };
 

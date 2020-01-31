@@ -1,33 +1,34 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import './App.css';
+import "./App.css";
 import "./styles.scss";
-import logo from './logo.png';
+import logo from "./logo.png";
 
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Login";
-import BubblePage from './components/BubblePage';
+import BubblePage from "./components/BubblePage";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header className='App-header'>
-        <img src={logo} className='App-logo' alt='bubbles-logo' />
-        <ul>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="bubbles-logo" />
+          <ul>
           <li>
-            <Link to='/login'>Login</Link>
+            <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to='/protected'>Bubble Page</Link>
+            <Link to="/protected">Bubble Page</Link>
           </li>
         </ul>
         </header>
-        <br/>
-        <Switch>
-          <PrivateRoute path='/protected' componenent={BubblePage}/>
-        <Route exact path="/" component={Login} />
-        </Switch>
+
+        <br />
+        {/* <Switch>
+          <PrivateRoute path="/protected" componenent={BubblePage} />
+          <Route exact path="/" component={Login} />
+        </Switch> */}
       </div>
     </Router>
   );
