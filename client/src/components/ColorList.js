@@ -43,7 +43,7 @@ const editColor = color => {
     .then(() => {
       console.log('color deleted')
       axiosWithAuth()
-        .get('http://localhost:5000/api/colors')
+        .get('/api/colors')
         .then(res => updateColors(res.data))
         .catch(err => console.log(err))
         setEditing(false);
