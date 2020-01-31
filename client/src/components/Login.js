@@ -1,51 +1,51 @@
 import React, { useState } from "react";
-import styles from "styled-components";
+// import styles from "styled-components";
 
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const StyledLogin = styles.div`
-.login-form {
-  margin-top:80px;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content:center;
-};
+// const StyledLogin = styles.div`
+// .login-form {
+//   margin-top:80px;
+//   display:flex;
+//   flex-direction: column;
+//   align-items:center;
+//   justify-content:center;
+// };
 
-.username {
-  // margin-right:20px;
-  padding:10px;
-  border:1px solid
-  0 0 1px rgba(0, 0, 0, 0.3), 
-  0 3px 7px rgba(0, 0, 0, 0.3), 
-  inset 0 1px rgba(255,255,255,1),
-  inset 0 -3px 2px rgba(0,0,0,0.25);
-  border-radius: 2px;
-  background: linear-gradient(#eeefef, #ffffff 10%);
-}
+// .username {
+//   // margin-right:20px;
+//   padding:10px;
+//   border:1px solid
+//   0 0 1px rgba(0, 0, 0, 0.3), 
+//   0 3px 7px rgba(0, 0, 0, 0.3), 
+//   inset 0 1px rgba(255,255,255,1),
+//   inset 0 -3px 2px rgba(0,0,0,0.25);
+//   border-radius: 2px;
+//   background: linear-gradient(#eeefef, #ffffff 10%);
+// }
 
-.password {
-  // margin-right:20px;
-  padding:10px;
+// .password {
+//   // margin-right:20px;
+//   padding:10px;
   
-  border:1px solid
-  0 0 1px rgba(0, 0, 0, 0.3), 
-  0 3px 7px rgba(0, 0, 0, 0.3), 
-  inset 0 1px rgba(255,255,255,1),
-  inset 0 -3px 2px rgba(0,0,0,0.25);
-  border-radius: 2px;
-  background: linear-gradient(#eeefef, #ffffff 10%);
-}
+//   border:1px solid
+//   0 0 1px rgba(0, 0, 0, 0.3), 
+//   0 3px 7px rgba(0, 0, 0, 0.3), 
+//   inset 0 1px rgba(255,255,255,1),
+//   inset 0 -3px 2px rgba(0,0,0,0.25);
+//   border-radius: 2px;
+//   background: linear-gradient(#eeefef, #ffffff 10%);
+// }
 
-button {
-  background-color:darkgreen;
-  color:white;
-  padding:5px;
-  border-radius:5px;
-  font-weight:bold;
-}
+// button {
+//   background-color:darkgreen;
+//   color:white;
+//   padding:5px;
+//   border-radius:5px;
+//   font-weight:bold;
+// }
 
-`;
+// `;
 
 const Login = props => {
   const [credentials, setCredentials] = useState({
@@ -70,7 +70,7 @@ const Login = props => {
   };
 
   return (
-    <StyledLogin>
+    // <StyledLogin>
       <div className="login-form">
         <form data-testid="login-form" onSubmit={submitForm}>
           <input
@@ -94,7 +94,7 @@ const Login = props => {
           </button>
         </form>
       </div>
-    </StyledLogin>
+    // </StyledLogin>
   );
 };
 
