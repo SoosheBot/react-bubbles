@@ -10,6 +10,7 @@ const ColorList = ({ colors, updateColors }) => {
   // console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
+  const [addColor, setAddColors] = useState({color:'', hex:''});
 
 
   const saveEdit = () => {
@@ -52,9 +53,12 @@ const editColor = color => {
       console.log("error", err);
     })
 };
+
+
+
   return (
     <div className="colors-wrap">
-      <p>colors</p>
+      <p>colors -- click a color to edit or add</p>
       <ul>
         {colors.map(color => (
           <li key={color.color} onClick={() => editColor(color)}>
@@ -104,7 +108,7 @@ const editColor = color => {
             <button onClick={() => setEditing(false)}>cancel</button>
           </div>
         </form>
-      )}
+        )}
       <div className="spacer" />
       {/* stretch - build another form here to add a color */}
     </div>
