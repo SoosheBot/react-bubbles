@@ -58,7 +58,7 @@ const editColor = color => {
 
   return (
     <div className="colors-wrap">
-      <p>colors -- click a color to edit or add</p>
+      <p>colors -- click a color to edit</p>
       <ul>
         {colors.map(color => (
           <li key={color.color} onClick={() => editColor(color)}>
