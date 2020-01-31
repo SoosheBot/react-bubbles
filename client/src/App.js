@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./App.css";
 import "./styles.scss";
@@ -10,8 +10,9 @@ import BubblePage from "./components/BubblePage";
 
 function App() {
   return (
+    <div className="App">
     <Router>
-      <div className="App">
+      
         <header className="App-header">
           <img src={logo} className="App-logo" alt="bubbles-logo" />
           <ul>
@@ -25,12 +26,15 @@ function App() {
         </header>
 
         <br />
-        {/* <Switch>
-          <PrivateRoute path="/protected" componenent={BubblePage} />
-          <Route exact path="/" component={Login} />
-        </Switch> */}
-      </div>
+        <Switch>
+        <PrivateRoute path="/protected" component={BubblePage} />
+          <Route path="/login" component={Login} />
+          <Route component={Login} />
+        </Switch>
+      
     </Router>
+
+    </div>
   );
 }
 

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import styles from "styled-components";
+
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import styles from 'styled-components';
 
 const StyledLogin = styles.div`
 .login-form {
+  margin-top:80px;
   display:flex;
   flex-direction: column;
   align-items:center;
@@ -11,8 +13,8 @@ const StyledLogin = styles.div`
 };
 
 .username {
-  margin-right:20px;
-  padding:15px;
+  // margin-right:20px;
+  padding:10px;
   border:1px solid
   0 0 1px rgba(0, 0, 0, 0.3), 
   0 3px 7px rgba(0, 0, 0, 0.3), 
@@ -23,8 +25,9 @@ const StyledLogin = styles.div`
 }
 
 .password {
-  margin-right:20px;
-  padding:15px;
+  // margin-right:20px;
+  padding:10px;
+  
   border:1px solid
   0 0 1px rgba(0, 0, 0, 0.3), 
   0 3px 7px rgba(0, 0, 0, 0.3), 
@@ -35,8 +38,9 @@ const StyledLogin = styles.div`
 }
 
 button {
-  background-color:chartreuse;
-  padding:15px;
+  background-color:darkgreen;
+  color:white;
+  padding:5px;
   border-radius:5px;
   font-weight:bold;
 }
@@ -55,11 +59,6 @@ const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // if (credentials.username && credentials.password === "") {
-    //   // create a message state to pull into here
-    // } else {
-    //   //error
-    // }
     axiosWithAuth()
       .post("api/login", credentials)
       .then(res => {
@@ -70,27 +69,31 @@ const Login = props => {
   };
 
   return (
-    // <StyledLogin>
-    <div className="login-form">
-      <form data-testid="login-form" onSubmit={handleSubmit}>
-        <input
-          type="text" className='username'
-          placeholder="Enter login name..."
-          name="username"
-          value={credentials.username}
-          onChange={handleChange}
-        />
-        <input
-          type="text" className='password'
-          placeholder="Enter password..."
-          name="password"
-          value={credentials.password}
-          onChange={handleChange}
-        />
-        <button className='login-button' type="submit">Login</button>
-      </form>
-    </div>
-    // </StyledLogin>
+    <StyledLogin>
+      <div className="login-form">
+        <form data-testid="login-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="username"
+            placeholder="Enter login name..."
+            name="username"
+            value={credentials.username}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            className="password"
+            placeholder="Enter password..."
+            name="password"
+            value={credentials.password}
+            onChange={handleChange}
+          />
+          <button className="login-button" type="submit">
+            Login
+          </button>
+        </form>
+      </div>
+    </StyledLogin>
   );
 };
 
