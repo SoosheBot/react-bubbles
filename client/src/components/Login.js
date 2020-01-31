@@ -54,24 +54,25 @@ const Login = props => {
   });
 
   const handleChange = e => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    setCredentials({ ...credentials, 
+      [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
+  const submitForm = e => {
     e.preventDefault();
     axiosWithAuth()
       .post("/api/login", credentials)
       .then(res => {
         localStorage.setItem("token", res.data.payload);
-        props.history.push("/protected");
+        props.history.push("./protected");
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log("login error", err.response));
   };
 
   return (
     <StyledLogin>
       <div className="login-form">
-        <form data-testid="login-form" onSubmit={handleSubmit}>
+        <form data-testid="login-form" onSubmit={submitForm}>
           <input
             type="text"
             className="username"

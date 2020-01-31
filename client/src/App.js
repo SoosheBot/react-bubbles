@@ -12,7 +12,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
+        <h1>Bubbles!</h1>
+        {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="bubbles-logo" />
           <ul>
             <li>
@@ -22,7 +23,7 @@ function App() {
               <Link to="/protected">Bubble Page</Link>
             </li>
           </ul>
-        </header>
+        </header> */}
         <Switch>
           <PrivateRoute path="/protected" component={BubblePage} />
           <Route path="/login" component={Login} />
@@ -34,3 +35,6 @@ function App() {
 }
 
 export default App;
+
+
+        

@@ -7,30 +7,44 @@ const initialColor = {
 };
 
 const ColorList = ({ colors, updateColors }) => {
-  console.log(colors);
+  // console.log(colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
+
 
   const editColor = color => {
     setEditing(true);
     setColorToEdit(color);
   };
 
-  const saveEdit = (e, props) => {
-    e.preventDefault();
+  const saveEdit = () => {
+    // e.preventDefault();
     // Make a put request to save your updated color
     // think about where will you get the id from...
     // where is is saved right now?
-    axiosWithAuth().put(`/api/colors/${colorToEdit.id}`, colorToEdit)
+    axiosWithAuth()
+    .put(`/api/colors/${colorToEdit.id}`, colorToEdit)
     .then(res => {
+      console.log('update colorList success', res)
       updateColors(res.data);
-      props.history.push('/');
+      // props.history.push('/');
+      // console.log('color edited', res)
     })
     .catch(err => console.log('saveEdit error in ColorList', err));
+    setEditing(false);
   };
 
-  const deleteColor = color => {
+
+  const deleteColor = (color) => {
     // make a delete request to delete this color
+    axiosWithAuth()
+    .delete(`/api/colors/${color.id}`, color)
+    .then(res => {
+      updateColors(colors);
+      // props.history.push('/');
+      console.log('color deleted successfully', res.data);
+    })
+    .catch(err => console.log('delete error in ColorList', err));
   };
 
   return (
